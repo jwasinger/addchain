@@ -59,6 +59,17 @@ var Functions = []*Function{
 		Func:        func(n int) int { return n + 1 },
 	},
 	{
+		Name:        "intRange",
+		Description: "Increment an integer",
+		Func: func(x, y uint) []uint {
+			res := make([]uint, y-x)
+			for i := x; i < y; i++ {
+				res[y-i-1] = i
+			}
+			return res
+		},
+	},
+	{
 		Name:        "format",
 		Description: "Formats an addition chain script (`*ast.Chain`) as a string",
 		Func:        printer.String,
